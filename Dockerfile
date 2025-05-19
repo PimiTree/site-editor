@@ -42,14 +42,14 @@ RUN mkdir -p /var/run/php/
 
 # Copy custom configs
 COPY /dev/php-fpm/php-fpm.conf /usr/local/etc/php-fpm.conf
-COPY /dev/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY /dev/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Add Nginx user to PHP socket group
 RUN usermod -a -G www-data nginx || true
 
 
 # Set working directory
-WORKDIR /var/www/html
+WORKDIR /var/www/webroot
 
 # Expose HTTP and HTTPS ports
 EXPOSE 80 443
