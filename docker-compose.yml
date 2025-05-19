@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  editor:
+    build: .
+    container_name: editor
+    hostname: editor.local
+    ports:
+      - "33333:80"
+      - "44333:443"
+    volumes:
+      - ./app:/var/www/html
+      - ./dev/nginx:/etc/nginx/conf.d
+      - ./dev/php-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
+      - ./dev/certs:/etc/nginx/ssl
+    depends_on:
+      - editor-db
+  editor-db:
+    image: postgres:15
+    container_name: editor-db
+    restart: always
+    environment:
+      POSTGRES_USER: editor
+      POSTGRES_PASSWORD: editor
+      POSTGRES_DB: editor
+    ports:
+      - "55333:5432"
+    volumes:
+      - ./dev/postgres:/docker-entrypoint-initdb.d
