@@ -6,11 +6,11 @@ services:
     container_name: editor
     hostname: editor.local
     ports:
-      - "33333:80"
-      - "44333:443"
+      - "80:80"
+      - "443:443"
     volumes:
-      - ./app:/var/www/html
-      - ./dev/nginx:/etc/nginx/conf.d
+      - ./app:/var/www
+      - ./dev/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./dev/php-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
       - ./dev/certs:/etc/nginx/ssl
     depends_on:
