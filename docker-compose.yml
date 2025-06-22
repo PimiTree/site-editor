@@ -1,10 +1,10 @@
 version: '3.8'
 
 services:
-  editor:
+  php-template-local:
     build: .
-    container_name: editor
-    hostname: editor.local
+    container_name: php-template-local
+    hostname: php.template.local
     ports:
       - "80:80"
       - "443:443"
@@ -13,17 +13,17 @@ services:
       - ./dev/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./dev/php-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
       - ./dev/certs:/etc/nginx/ssl
+      - ./dev/php/php.ini:/usr/local/etc/php/php.ini
     depends_on:
-      - editor-db
-  editor-db:
+      - php-template-local-db
+  php-template-local-db:
     image: postgres:15
-    container_name: editor-db
-    restart: always
+    container_name: php-template-local-db
     environment:
-      POSTGRES_USER: editor
-      POSTGRES_PASSWORD: editor
-      POSTGRES_DB: editor
+      POSTGRES_USER: template
+      POSTGRES_PASSWORD: template
+      POSTGRES_DB: template
     ports:
-      - "55333:5432"
+      - "55334:5432"
     volumes:
       - ./dev/postgres:/docker-entrypoint-initdb.d

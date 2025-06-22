@@ -1,4 +1,4 @@
-<?php function vj_render_404(array $view_params): void
+<?php function vj_render_500(array $view_params): void
 { ?>
   <main>
     <h1><?= $view_params['text'] ?></h1>

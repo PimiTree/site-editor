@@ -1,0 +1,22 @@
+main.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+}
+
+.reset-password-link {
+  transition: 0.3s ease-in-out;
+  color: #0a75a3 ;
+}
+
+.reset-password-link:hover {
+  color: skyblue ;
+}
+
+.error {
+  margin-top: 20px;
+}
+
+

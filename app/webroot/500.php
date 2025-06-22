@@ -1,17 +1,17 @@
 <?php
 require('../templates/common.php');
-require('../templates/404.php');
+require('../templates/500.php');
 
 $header_params = [
-    'title' => '404'
+    'title' => '500'
 ];
 
 $view_params = [
-    "text" => '404'
+    "text" => '500'
 ];
 
 vj_render_header_template($header_params);
-vj_render_404($view_params);
+vj_render_500($view_params);
 vj_render_footer_template();
 
 

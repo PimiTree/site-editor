@@ -1,0 +1,11 @@
+main.registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+}
+
+.error {
+  margin-top: 20px;
+}
