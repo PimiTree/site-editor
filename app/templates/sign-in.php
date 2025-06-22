@@ -1,9 +1,9 @@
 <?php
 
-function vj_render_login(array $view_params): void
+function vj_render_sign_in(array $view_params): void
 { ?>
   <main class="login main-padding">
-  <form class="form-style-1" action="/login" method="POST">
+  <form class="form-style-1" action="/sign-in" method="POST">
 
     <label class="label-style-1">
       Email

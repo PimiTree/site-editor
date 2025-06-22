@@ -23,7 +23,7 @@
   <header>
     <ul>
       <li>
-        <a href="/sign-up">Sign in</a>
+        <a href="/sign-in">Sign in</a>
         <a href="/sign-up">Sign up</a>
         <a href="/sign-out">Sign out</a>
       </li>

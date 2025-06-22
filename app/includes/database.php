@@ -4,7 +4,6 @@ function vj_db_get_connection(): PDO {
   return new PDO('pgsql:host=php-template-local-db;port=5432;dbname=template', 'template', 'template');
 }
 
-
 function vj_db_get_user_by_email (string $email, PDO $connection): PDOStatement {
     $user_statement = $connection->prepare('SELECT * FROM users WHERE email = :email');
     $user_statement->bindValue(':email', $email);
@@ -55,4 +54,11 @@ function vj_db_get_session_by_id (string $session_id, PDO $connection): array|fa
     $session_statement->execute();
 
     return $session_statement->fetch(PDO::FETCH_ASSOC);
+}
+
+function vj_db_delete_session_by_id (string $session_id, PDO $connection): void
+{
+    $session_statement = $connection->prepare('DELETE FROM sessions WHERE id = :id');
+    $session_statement->bindValue(':id', $session_id);
+    $session_statement->execute();
 }

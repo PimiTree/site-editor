@@ -1,0 +1,8 @@
+<?php
+
+
+const SESSION_ENCRYPTION_METHOD = 'aes-256-gcm';
+const SESSION_ENCRYPTION_SECRET = '1234';
+
+define("SESSION_ENCRYPTION_IV_LEN", openssl_cipher_iv_length(SESSION_ENCRYPTION_METHOD));
+

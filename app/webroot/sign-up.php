@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $result = $statement->execute();
 
             if ($result === true) {
-                header('Location: /login');
+                header('Location: /sign-in');
                 exit();
             }
         }
@@ -68,9 +68,9 @@ $header_params = [
 ];
 
 require('../templates/common.php');
-require('../templates/registration.php');
+require('../templates/sign-up.php');
 vj_render_header_template($header_params);
-vj_render_registration($view_params);
+vj_render_sign_up($view_params);
 vj_render_footer_template();
 
 

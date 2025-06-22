@@ -20,6 +20,7 @@ echo $_SERVER['REQUEST_URI'];
 echo '<br>';
 echo 'test <br>';
 
+
 vj_render_header_template($header_params);
 vj_render_home($view_params);
 vj_render_footer_template();

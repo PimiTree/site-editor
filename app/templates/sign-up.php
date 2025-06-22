@@ -1,9 +1,9 @@
 <?php
 
-function vj_render_registration(array $view_params): void
+function vj_render_sign_up(array $view_params): void
 { ?>
   <main class="registration main-padding">
-    <form class="form-style-1" action="/registration" method="POST">
+    <form class="form-style-1" action="/sign-up" method="POST">
 
       <label class="label-style-1">
         Name
